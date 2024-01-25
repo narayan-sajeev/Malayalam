@@ -71,15 +71,6 @@ def write_to_file():
     fhand.close()
 
 
-# Get average points
-def get_average_points():
-    # Retrieve points
-    pts = read_from_file()
-
-    # Return average points
-    return sum([pts[_] for _ in pts]) / len(pts)
-
-
 # Open file
 fhand = open('mala.txt', 'r')
 
@@ -114,8 +105,6 @@ try:
         count_mastered = len(get_mastered())
         # Print number of mastered words
         print('Mastered: %s (%s%%)' % (count_mastered, round(count_mastered / length * 100)))
-        # Print average points
-        print('Average points: %s' % round(get_average_points()))
         # Print malayalam word
         _ = input('%s\t%s ' % (' '.join(list(mal2)), mal.capitalize().lower()))
         # Check if correct
